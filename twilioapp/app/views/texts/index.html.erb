@@ -1,0 +1,36 @@
+<h2> All texts </h2>
+
+
+<table>
+  <caption> Texts sent so far </caption>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Message</th>
+      <th>Sent at</th>
+    <tr/>
+  </thead>
+
+  <tbody>
+    <% if @texts.empty? %>
+      <tr>
+        <td colspan="3"> Sorry No texts Yet </td>
+      </tr>
+    <% end %>
+
+    <% @texts.each do |text| %>
+
+
+    <tr>
+      <td><%= text.tel %></td>
+      <td><%= text.message %></td>
+      <td><%= text.created_at %> </td>
+    </tr>
+
+  <% end  unless @texts.empty? %>    
+
+  </tbody>
+</table>
+
+
+<%= link_to 'New Text', new_text_path, class: 'button medium radius'%>

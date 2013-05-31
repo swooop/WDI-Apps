@@ -1,0 +1,12 @@
+<h1>Send text message </h1>
+
+
+<%= form_for @text do |f| %>
+  <fieldset>
+    <legend>New Text Message</legend>
+    <%= f.text_field :tel, type: 'tel', placeholder: 'Mobile Number' %>
+    <%= f.text_area :message, placeholder: 'Your lovely message' %>
+    <p><span id="counter">160</span> characters remaining</p>
+    <%= f.submit 'Send me!', class: 'button medium radius' %>
+  </fieldset>
+<%end%>
